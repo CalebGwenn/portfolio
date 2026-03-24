@@ -259,6 +259,7 @@ const projects = [
     year: '2025',
     desc: `A digital document signing system built for government use, streamlining approval workflows for non-COA documents with a clean, accessible interface.\n\nDeveloped the front-end using ASP.NET Web Forms, C#, CSS, and JavaScript. Translated Figma designs into functional workflows that support document uploading, reviewing, approval, and digital signing.`,
     tags: ['C#', 'Visual Studio', 'CSS', 'Figma'],
+    thumb: '1.png',
     photos: ['About.png', 'LogIn Page 2.png', 'Registration Page.png'],
   },
   {
@@ -266,6 +267,7 @@ const projects = [
     year: '2024–2025',
     desc: `An e-commerce platform focused on sustainable, second-hand goods — featuring an AI chatbot to help users find what they're looking for more naturally.\n\nBuilt with React and styled with custom CSS. The chatbot integration was designed to reduce friction and make browsing feel more conversational and human.`,
     tags: ['React', 'CSS', 'Figma'],
+    thumb: 'remade.png',
     photos: ['renade1.png', 'remade2.png', 'remade3.png'],
   },
   {
@@ -273,6 +275,7 @@ const projects = [
     year: '2024',
     desc: `A property browsing web app designed in Figma and built with HTML/CSS — helping users find and explore housing listings with a calm, intuitive layout.\n\nFocused on responsive design and accessibility, ensuring the interface works smoothly across different screen sizes and devices.`,
     tags: ['Figma', 'CSS', 'Front-End Development'],
+    thumb: 'habitatfinder.png',
     photos: ['About 2.png', 'HomePage.png', 'LandingPage.png'],
   },
   {
@@ -280,6 +283,7 @@ const projects = [
     year: '2023',
     desc: `Contributed to the design and front-end development of Milktea POS Management System, a POS management system for small businesses, using HTML, CSS, and JavaScript. Developed a responsive and intuitive interface that streamlined inventory tracking and transaction processing, improving efficiency and reducing manual errors.`,
     tags: ['HTML', 'CSS', 'JavaScript', 'Front-End Development'],
+    thumb: '2.pngs',
     photos: ['SwifTea.png', 'milktea.png', 'Swiftea2.jpg'],
   },
 ];
