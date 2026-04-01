@@ -244,14 +244,6 @@ function handleCertOverlayClick(e) {
 
 /* ============================================================
    PROJECT DATA
-   ── How to add photos ──────────────────────────────────────
-   1. Put your image files next to index.html, e.g. in /images/
-   2. Fill in the "photos" array with the relative paths:
-        photos: ['images/dss-1.png', 'images/dss-2.png']
-   3. Leave a slot as '' if you don't have that photo yet —
-      a placeholder tile will appear automatically.
-   ── Description formatting ─────────────────────────────────
-   Separate paragraphs with a blank line (\n\n).
    ============================================================ */
 const projects = [
   {
@@ -296,7 +288,7 @@ function openProjModal(index) {
   document.getElementById('projModalTitle').textContent = p.title;
   document.getElementById('projModalYear').textContent  = p.year;
 
-  // Description — split on blank lines into paragraphs
+  // Description 
   document.getElementById('projModalDesc').innerHTML = p.desc
     .split('\n\n')
     .map(para => `<p>${para.trim()}</p>`)
@@ -314,7 +306,6 @@ function openProjModal(index) {
   const hasPhotos = p.photos && p.photos.some(src => src.trim() !== '');
 
   if (hasPhotos) {
-    // Real images
     p.photos.forEach(src => {
       if (!src.trim()) return;
       const img = document.createElement('img');
@@ -325,7 +316,6 @@ function openProjModal(index) {
       gallery.appendChild(img);
     });
   } else {
-    // Placeholder tiles until real photos are added
     p.photos.forEach((_, i) => {
       const slot = document.createElement('div');
       slot.className = 'proj-modal-placeholder';
@@ -419,17 +409,20 @@ const observer = new IntersectionObserver(entries => {
 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-/* ----- ACTIVE NAV ----- */
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-links a');
+/* ----- ACTIVE NAV (desktop links + drawer links) ----- */
+const sections  = document.querySelectorAll('section[id]');
+const navLinks  = document.querySelectorAll('.nav-links a');
+const drawerLinks = document.querySelectorAll('.drawer-link');
 let ticking = false;
 
 const setActive = () => {
   let current = '';
   sections.forEach(s => { if (scrollY >= s.offsetTop - 130) current = s.id; });
-  navLinks.forEach(a => {
+
+  [...navLinks, ...drawerLinks].forEach(a => {
     a.classList.toggle('active', a.getAttribute('href') === `#${current}`);
   });
+
   ticking = false;
 };
 

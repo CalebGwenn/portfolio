@@ -16,6 +16,8 @@
      ============================================================ -->
 <nav>
   <a href="#home" class="nav-logo">caleb galagar<span class="dot"> ◆</span></a>
+
+  <!-- Desktop links -->
   <ul class="nav-links">
     <li><a href="#home">Home</a></li>
     <li><a href="#about">About</a></li>
@@ -24,7 +26,28 @@
     <li><a href="#projects">Projects</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
+
+  <!-- Hamburger (mobile only) -->
+  <button class="nav-hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 </nav>
+
+<!-- Mobile drawer -->
+<div class="nav-drawer" id="navDrawer">
+  <div class="nav-drawer-backdrop" id="drawerBackdrop"></div>
+  <div class="nav-drawer-panel">
+    <a href="#home"         class="drawer-link">Home</a>
+    <a href="#about"        class="drawer-link">About</a>
+    <a href="#skills"       class="drawer-link">Skills</a>
+    <a href="#certificates" class="drawer-link">Certificates</a>
+    <a href="#projects"     class="drawer-link">Projects</a>
+    <a href="#contact"      class="drawer-link">Contact</a>
+    <div class="nav-drawer-footer">made with ◆ care</div>
+  </div>
+</div>
 
 <!-- ============================================================
      HOME
@@ -72,7 +95,7 @@
 
       <div class="about-photo reveal">
         <img src="23.png" alt="Caleb Galagar" class="about-photo-img" />
-         <div class="about-sticker">it me!</div>
+        <div class="about-sticker">it me!</div>
       </div>
 
       <div class="reveal" style="transition-delay:0.12s">
@@ -81,6 +104,7 @@
         <p>I'm a Computer Science student at the University of Caloocan City who enjoys turning "what if" ideas into things people can actually click, use, and understand. I got into tech out of curiosity, and somewhere along the way, I started caring just as much about how things feel as how they work.</p>
         <p>I've worked with Java, C#, HTML/CSS, and Figma, and I use AI tools like GitHub Copilot and Cursor to move faster and think bigger. So far, I've built a student portal, a Point-of-Sale system, and an e-commerce site with an AI chatbot that helps make user interactions smoother and a bit more human.</p>
         <p>These days, I'm focused on UI/UX and front-end development — making sure the things I build aren't just functional, but actually make sense (and maybe even feel nice to use). I'm open to internships and collaborations in software development, AI, and web tech.</p>
+
         <div class="about-facts">
           <span class="fact-chip">
             <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
@@ -99,6 +123,7 @@
             MC listener
           </span>
         </div>
+
         <div class="about-stats">
           <div class="stat-box"><div class="stat-num">2021</div><div class="stat-label">Started coding</div></div>
           <div class="stat-box"><div class="stat-num">3</div><div class="stat-label">Projects</div></div>
@@ -173,8 +198,9 @@
     <div class="reveal">
       <p class="section-tag">certificates</p>
       <h2 class="section-title">Things I've <em>earned</em></h2>
-        <p style="font-size:0.92rem;color:var(--brown2);line-height:1.85;max-width:900px;margin-bottom:0.8rem">These certificates are proof of the skills I've been building through practice, projects, and a bit of curiosity. Each one marks a step forward in creating things that are not just functional, but actually make sense to use.</p>
-        <p style="font-size:0.82rem;color:var(--muted);margin-bottom:2rem">Click any card to learn more.</p>    </div>
+      <p style="font-size:0.92rem;color:var(--brown2);line-height:1.85;max-width:900px;margin-bottom:0.8rem">These certificates are proof of the skills I've been building through practice, projects, and a bit of curiosity. Each one marks a step forward in creating things that are not just functional, but actually make sense to use.</p>
+      <p style="font-size:0.82rem;color:var(--muted);margin-bottom:2rem">Click any card to learn more.</p>
+    </div>
     <div class="cert-grid-wrap reveal" style="transition-delay:0.1s">
       <div class="cert-grid" id="certGrid"></div>
       <div class="cert-pagination">
@@ -187,9 +213,7 @@
   </div>
 </section>
 
-<!-- ============================================================
-     CERTIFICATE MODAL
-     ============================================================ -->
+<!-- Certificate Modal -->
 <div class="modal-overlay" id="certModal" onclick="handleCertOverlayClick(event)">
   <div class="modal">
     <button class="modal-close" onclick="closeCertModal()">✕</button>
@@ -208,7 +232,7 @@
 </div>
 
 <!-- ============================================================
-     PROJECTS  (carousel — each card opens a modal on click)
+     PROJECTS
      ============================================================ -->
 <section id="projects">
   <div class="container">
@@ -223,11 +247,10 @@
     <div class="proj-carousel reveal" style="transition-delay:0.1s">
       <div class="proj-carousel-track" id="projTrack">
 
-        <!-- Card 0 -->
         <div class="proj-slide">
           <div class="proj-card-new" onclick="openProjModal(0)">
             <div class="proj-thumb-new thumb-sage">
-                <img src="1.png" alt="1" class="proj-thumb-img" />
+              <img src="1.png" alt="Digital Signing Service" class="proj-thumb-img" />
             </div>
             <div class="proj-body-new">
               <div class="proj-num">2025</div>
@@ -244,11 +267,10 @@
           </div>
         </div>
 
-        <!-- Card 1 -->
         <div class="proj-slide">
           <div class="proj-card-new" onclick="openProjModal(1)">
             <div class="proj-thumb-new thumb-teal">
-                <img src="remade.png" alt="remade" class="proj-thumb-img" />
+              <img src="remade.png" alt="REMADE" class="proj-thumb-img" />
             </div>
             <div class="proj-body-new">
               <div class="proj-num">2024–2025</div>
@@ -264,11 +286,10 @@
           </div>
         </div>
 
-        <!-- Card 2 -->
         <div class="proj-slide">
           <div class="proj-card-new" onclick="openProjModal(2)">
             <div class="proj-thumb-new thumb-sky">
-                <img src="habitatfinder.png" alt="habitatfinder" class="proj-thumb-img" />
+              <img src="habitatfinder.png" alt="HabitatFinder" class="proj-thumb-img" />
             </div>
             <div class="proj-body-new">
               <div class="proj-num">2024</div>
@@ -284,56 +305,46 @@
           </div>
         </div>
 
-        <!-- Card 3 — new slot -->
         <div class="proj-slide">
           <div class="proj-card-new" onclick="openProjModal(3)">
             <div class="proj-thumb-new thumb-clay">
-              <img src="2.png" alt="2" class="proj-thumb-img" />
+              <img src="2.png" alt="Milktea POS" class="proj-thumb-img" />
             </div>
             <div class="proj-body-new">
               <div class="proj-num">2023</div>
               <div class="proj-name">Milktea POS Management System</div>
-              <p class="proj-desc">Developed the front-end of Milktea POS Management System, a POS system for small businesses, creating a responsive interface that streamlined inventory tracking and transaction processing.</p>
+              <p class="proj-desc">Developed the front-end of a POS system for small businesses, creating a responsive interface that streamlined inventory and transactions.</p>
               <div class="proj-tags">
                 <span class="ptag">JavaScript</span>
                 <span class="ptag">PHP</span>
-                <span class="ptag"></span>
               </div>
               <span class="proj-view-hint">view details →</span>
             </div>
           </div>
         </div>
 
-      </div><!-- /track -->
+      </div>
 
       <div class="proj-carousel-controls">
         <button class="proj-carousel-btn" id="projPrev" onclick="projCarousel(-1)" aria-label="Previous project">←</button>
         <div class="proj-carousel-dots" id="projDots"></div>
-        <button class="proj-carousel-btn" id="projNext" onclick="projCarousel(1)"  aria-label="Next project">→</button>
+        <button class="proj-carousel-btn" id="projNext" onclick="projCarousel(1)" aria-label="Next project">→</button>
       </div>
-    </div><!-- /carousel -->
+    </div>
   </div>
 </section>
 
-<!-- ============================================================
-     PROJECT MODAL
-     ── To add photos, update the projects[] array in script.js
-     ============================================================ -->
+<!-- Project Modal -->
 <div class="proj-modal-overlay" id="projModal" onclick="handleProjOverlayClick(event)">
   <div class="proj-modal">
     <button class="proj-modal-close" onclick="closeProjModal()">✕</button>
-
     <div class="proj-modal-header">
       <div class="proj-modal-eyebrow" id="projModalYear"></div>
-      <h2 class="proj-modal-title"   id="projModalTitle"></h2>
+      <h2  class="proj-modal-title"   id="projModalTitle"></h2>
     </div>
-
-    <div class="proj-modal-desc" id="projModalDesc"></div>
-
-    <div class="proj-modal-tags" id="projModalTags"></div>
-
+    <div class="proj-modal-desc"  id="projModalDesc"></div>
+    <div class="proj-modal-tags"  id="projModalTags"></div>
     <div class="proj-modal-divider"></div>
-
     <div class="proj-modal-gallery-label">screenshots</div>
     <div class="proj-modal-gallery" id="projModalGallery"></div>
   </div>
